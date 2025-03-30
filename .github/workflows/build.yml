@@ -96,7 +96,7 @@ jobs:
 
     - name: Configure CMake
       run: >
-        cmake -G Ninja -B build
+        CXXFLAGS="-Wno-error=deprecated-copy" cmake -G Ninja -B build
         -D CMAKE_BUILD_TYPE=$BUILD_TYPE
         -D CMAKE_TOOLCHAIN_FILE="$TOOLCHAIN_FILE"
         -D BUILD_SHARED_LIBS=${{ matrix.shared_libs }}

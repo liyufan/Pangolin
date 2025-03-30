@@ -45,7 +45,7 @@ if(BUILD_PANGOLIN_LIBOPENEXR)
         target_link_libraries(${COMPONENT} PRIVATE ${OpenEXR_LIBRARY})
         target_compile_options(${COMPONENT} PRIVATE
             $<$<OR:$<CXX_COMPILER_ID:AppleClang>,$<CXX_COMPILER_ID:Clang>,$<CXX_COMPILER_ID:GNU>>:
-            -Wno-deprecated-register -Wno-deprecated>
+            -Wno-deprecated>
         )
         # https://github.com/stevenlovegrove/Pangolin/issues/677
         set_target_properties(${COMPONENT} PROPERTIES CXX_STANDARD 11)
